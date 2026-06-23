@@ -1,0 +1,36 @@
+test_id,test_type,customer_question,expected_behavior
+TC-01,availability_by_name,Do you have Core Cotton Tee in black size M?,"Answer from data. If exact Black M variant exists, mention price and stock status."
+TC-02,availability_by_sku,Is SKU UT-1003 available?,"Find exact SKU and answer product name, color, size, price, and stock status."
+TC-03,unavailable_sku,Can I order SKU UT-1001 today?,"If stock is 0, clearly say it is out of stock and suggest close alternatives."
+TC-04,category_search,Show me hoodies under $55.,Return only hoodie products/variants with price <= 55 and in/low stock.
+TC-05,color_filter,Which jackets are available in olive?,Return jacket variants where color is Olive and stock is not Out of Stock.
+TC-06,size_filter,Do you have jeans in size 34?,"Return jean variants with size 34, grouped by product/color if possible."
+TC-07,price_range,What sneakers do you have between $45 and $65?,Return sneaker variants in the price range and available/low stock.
+TC-08,alternative_request,I wanted a black hoodie but my size is unavailable. What else can I buy?,Suggest in-stock hoodies with similar category/color/price where possible.
+TC-09,no_hallucination,Do you sell leather wallets?,Say product is not in the current data and provide fallback contact details.
+TC-10,ambiguous,I need something for winter.,Ask a clarifying question or suggest relevant categories like hoodies/jackets from data.
+TC-11,article_number,Find article ART-TSH-01-M-BLA.,Lookup article number exactly and answer from that row if it exists.
+TC-12,case_insensitive,do you have core cotton tee black m,Should still find the product even without punctuation/capital letters.
+TC-13,partial_name,Any bomber jackets available?,Find Lightweight Bomber Jacket variants and show available options.
+TC-14,unavailable_color,Do you have Ribbed Knit Dress in purple?,Say purple is not available in data; suggest existing colors for Ribbed Knit Dress.
+TC-15,unavailable_size,Do you have Court Style Sneakers in size 13?,Say size 13 is unavailable; suggest available sizes from the data.
+TC-16,stock_quantity,How many black size S Fleece Pullover Hoodies are left?,Return exact stock quantity if row exists.
+TC-17,low_stock_behavior,Which products are low stock?,"Return low-stock products only, ideally with SKU and quantity."
+TC-18,out_stock_behavior,Show me out of stock products.,"Return out-of-stock products, with alternatives if asked."
+TC-19,category_list,What product categories do you have?,List categories found in the dataset.
+TC-20,tags_search,Do you have casual everyday items?,Use tags/description/category to suggest relevant in-stock products.
+TC-21,budget_recommendation,Recommend something under $25.,Return available products priced under 25 only.
+TC-22,expensive_filter,What jackets are above $70?,Return jackets above $70 from data.
+TC-23,multiple_filters,Show navy hoodies size L.,Filter category Hoodies + color Navy + size L.
+TC-24,product_info,Tell me about the Linen Shirt Dress.,"Give description, available colors/sizes, price range, stock status from data."
+TC-25,price_check,What is the price of the Oversized Street Tee?,Give price range or variants from data; do not invent.
+TC-26,direct_contact_fallback,Can your team help me choose a size?,Provide fallback contact details and maybe suggest checking sizes in data.
+TC-27,negative_inventory_guard,Can I buy 500 units of any jacket?,Do not claim bulk availability; explain current stock is limited to dataset quantities.
+TC-28,exact_variant_missing,Do you have Denim Trucker Jacket in tan XL?,"If exact variant absent or out of stock, say so and suggest alternatives."
+TC-29,product_exists_variant_absent,Do you have Core Cotton Tee in Red?,Say product exists but red color is not available in data.
+TC-30,wrong_category,Do you have skincare products?,Say not in current UrbanThread clothing catalog and provide fallback.
+TC-31,compare_options,Compare black and white Core Cotton Tee options.,Return variants and prices from data.
+TC-32,sku_typo,Is UT-9999 available?,Say SKU not found and provide fallback/contact.
+TC-33,friendly_message,I need a casual outfit for travel under $100.,Suggest available items from data; avoid checkout/order promises.
+TC-34,stock_status_summary,Which sneaker sizes are available in white?,Return sneaker variants in White with stock status/quantity.
+TC-35,unsupported_order_tracking,Where is my order?,Say this bot cannot track orders; provide fallback contact.
