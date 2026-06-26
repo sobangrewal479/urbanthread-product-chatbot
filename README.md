@@ -18,7 +18,7 @@ The chatbot does **not** invent products, prices, stock quantities, colors, size
 
 ## Demo Video
 
-Watch the demo here: https://youtu.be/Ida2BOS9g6I
+Watch the demo here: https://youtu.be/YjDFajiNMW8
 
 This demo shows the AI product data chatbot answering ecommerce product questions using structured catalog data such as product name, size, color, price, stock status, and sale items. It also shows how the bot handles missing or unavailable product queries safely.
 
